@@ -4,6 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-        <bean id="server" class="com.chat.server.Server"/>
+        <bean id="server" class="com.chat.server.Server">
+                <property name="authService" ref="authService"/>
+        </bean>
+
+        <bean id="authService" class="com.chat.server.AuthService"/>
 
 </beans>

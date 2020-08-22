@@ -13,10 +13,12 @@ public class Server {
     private Vector<ActiveClient> activeClients;
     private AuthService authService;
 
+    public void setAuthService(AuthService authService) {
+        this.authService = authService;
+    }
 
     public void start() {
         activeClients = new Vector<>();
-        authService = new AuthService();
         authService.connect();
         try (ServerSocket server = new ServerSocket(PORT);) {
             System.out.println("server has been started");
@@ -29,7 +31,6 @@ public class Server {
 
 
         } catch (IOException e) {
-
             e.printStackTrace();
         } finally {
             authService.disconnect();

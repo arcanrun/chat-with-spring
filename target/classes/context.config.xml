@@ -4,6 +4,17 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-<!--        <bean id="server" class="com.chat.server.Server"/>-->
+        <bean id="server" class="com.chat.server.Server">
+                <property name="authService" ref="authService"/>
+        </bean>
 
+        <bean id="authService" class="com.chat.server.AuthService"/>
+
+<!--        <bean id="socket" class="java.net.Socket"/>-->
+
+<!--        <bean id="activeClient" class="com.chat.server.ActiveClient" >-->
+<!--                <constructor-arg index="0" ref="socket"/>-->
+<!--                <constructor-arg index="1" ref="server"/>-->
+<!--                <constructor-arg index="2" ref="authService"/>-->
+<!--        </bean>-->
 </beans>
