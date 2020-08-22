@@ -10,7 +10,7 @@ public class ClientRunner extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../../../../resources/client.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/client.fxml"));
         primaryStage.setTitle("ChatFX");
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
