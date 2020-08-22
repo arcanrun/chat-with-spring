@@ -14,7 +14,7 @@ public class Server {
     private AuthService authService;
 
 
-    public Server() {
+    public void start() {
         activeClients = new Vector<>();
         authService = new AuthService();
         authService.connect();
