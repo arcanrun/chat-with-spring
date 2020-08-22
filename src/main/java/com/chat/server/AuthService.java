@@ -2,8 +2,11 @@ package com.chat.server;
 
 
 
+import org.springframework.stereotype.Component;
+
 import java.sql.*;
 
+@Component
 public class AuthService {
     private Connection connection;
     private PreparedStatement loginAndPassStmnt;

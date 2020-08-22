@@ -1,18 +1,23 @@
 package com.chat.server;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Arrays;
 import java.util.Vector;
 
+@Component
 public class Server {
     public static final int PORT = 8189;
     private Socket socket;
     private Vector<ActiveClient> activeClients;
     private AuthService authService;
 
+    @Autowired
     public void setAuthService(AuthService authService) {
         this.authService = authService;
     }
